@@ -1,5 +1,5 @@
 import axios from 'axios';
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.REACT_APP_STOCKS_API_KEY;
 
 
  const getData = async () => {
