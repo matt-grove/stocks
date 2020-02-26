@@ -6,8 +6,7 @@ import lineProperties from './timeSeriesInfo';
 import apiRequest from '../services/request';
 import AlphaData from '../data/alpha';
 
-
-const TimeSeries = (props) => {
+const TimeSeries = () => {
   const [alphaData, setAlphaData] = useState(null);
   useEffect(() => {
     const runner = async () => {

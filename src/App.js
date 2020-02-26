@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css'
-import TimeSeries from './components/timeSeries'
+import PieChart from './components/pieChart'
 
  const App = () => {
   return (
     <>
-      <TimeSeries/>
+      <PieChart/>
     </>
   );
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "java",
+    "label": "java",
+    "value": 187,
+    "color": "hsl(142, 70%, 50%)"
+  },
+  {
+    "id": "elixir",
+    "label": "elixir",
+    "value": 352,
+    "color": "hsl(335, 70%, 50%)"
+  },
+  {
+    "id": "scala",
+    "label": "scala",
+    "value": 168,
+    "color": "hsl(225, 70%, 50%)"
+  },
+  {
+    "id": "sass",
+    "label": "sass",
+    "value": 446,
+    "color": "hsl(68, 70%, 50%)"
+  },
+  {
+    "id": "lisp",
+    "label": "lisp",
+    "value": 359,
+    "color": "hsl(185, 70%, 50%)"
+  }
+]
