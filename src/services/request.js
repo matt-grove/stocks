@@ -1,9 +1,10 @@
-import axios from 'axios'
-// import { token } from '../data/token'
+import axios from 'axios';
+const apiKey = process.env.API_KEY;
+
 
  const getData = async () => {
   try {
-    const response = await axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=GPRO&interval=5min&apikey=');
+    const response = await axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=GPRO&interval=5min&apikey=' + apiKey);
     return(response);
   } catch (err) {
     console.error(err);

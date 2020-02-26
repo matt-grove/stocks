@@ -5,7 +5,7 @@ import convertData from '../services/convertData';
 import request from '../services/request';
 import AlphaData from '../data/alpha';
 import { timeSeriesInfo, getColor} from './timeSeriesInfo';
-import { linearGradientDef } from '@nivo/core'
+import { linearGradientDef } from '@nivo/core';
 
 
 const TimeSeries = (props) => {
@@ -14,7 +14,7 @@ const TimeSeries = (props) => {
 
   useEffect(() => {
     const runner = async () => {
-      const a = await convertData(AlphaData);
+      const a = await convertData(request());
       setAlphaData(a);
     }
     runner();
@@ -42,9 +42,7 @@ const TimeSeries = (props) => {
          axisBottom={ timeSeriesInfo.axisBottom }
          colors={ getColor }
          defs={ timeSeriesInfo.defs }
-         fill={ timeSeriesInfo.fill }
-
-         />
+         fill={ timeSeriesInfo.fill }/>
       }
 
     </div>
