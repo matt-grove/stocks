@@ -12,7 +12,6 @@ const lineProperties = {
   enableSlices: 'x',
   isInteractive: true,
   motionStiffness: 300,
-  motionDamping: 18,
   margin: {
     top: 50,
     right: 50,
