@@ -15,7 +15,7 @@ const TimeSeries = () => {
   const [alphaData, setAlphaData] = useState(null);
   useEffect(() => {
     const runner = async () => {
-      const a = await convertData(apiRequest());
+      const a = await convertData(AlphaData);
       setAlphaData(a);
     }
     runner();

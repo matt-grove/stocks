@@ -30,16 +30,10 @@ const lineProperties = {
      format: "%Y-%m-%d %H:%M:%S",
      precision: "second"
   },
-  axisBottom:{
+  axisBottom: {
     format: "%H:%M",
     tickValues: "every 1 hours"
   }
 }
 
 export default lineProperties;
-
-
-
-
-
-//

@@ -1,14 +1,16 @@
 [
   {
-    "id": "java",
-    "label": "java",
-    "value": 100,
-    "color": "hsl(142, 70%, 50%)"
+    "id": "complete",
+    "label": "met",
+    "value": 4.8,
+    "color": "#13E2C9",
+    "target": 6
   },
   {
-    "id": "elixir",
-    "label": "elixir",
-    "value": 65,
-    "color": "hsl(0, 0%, 2%)"
+    "id": "incomplete",
+    "label": "left",
+    "value": 1.2,
+    "color": "hsl(0,0%, 95%)",
+    "target": 6
   }
 ]
