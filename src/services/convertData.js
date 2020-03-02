@@ -1,4 +1,3 @@
-
 const convertData = async (apiReq) => {
   let output;
   const data = await apiReq;
@@ -7,10 +6,10 @@ const convertData = async (apiReq) => {
       const item = {};
       item.x = key;
       item.y = inputData[key]['4. close'];
+      console.log(result)
       result.push(item);
       return result;
   }, []);
-
 
 
   const today = new Date(Math.max.apply(null,reducedData.map(i=>new Date(i.x))));
