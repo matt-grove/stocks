@@ -1,13 +1,24 @@
-import axios from 'axios';
-const apiKey = process.env.REACT_APP_STOCKS_API_KEY;
+import axios from 'axios'
+import apiSchema from '../data/apiSchema'
 
+const getData = async () => {
 
- const getData = async () => {
+  const apiInfo = apiSchema[1]
+  const apiKey = process.env.REACT_APP_STOCKS_API_KEY
+  const apiSymbol = "GPRO"
+  const apiString = "https://www.alphavantage.co/query?" +
+                    "function=" + apiInfo.apiFunction +
+                    "&apikey=" + apiKey +
+                    "&symbol=" + apiSymbol +
+                    ((apiInfo.interval===null) ? "" : "&interval=" + apiInfo.interval)
+
   try {
-    const response = await axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=GPRO&interval=5min&apikey=' + apiKey);
-    return(response);
-  } catch (err) {
-    console.error(err);
+    return await axios.get(apiString)
   }
+  catch (err) {
+    console.error(err)
+  }
+
 }
-export default getData;
+
+export default getData

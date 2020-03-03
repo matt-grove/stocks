@@ -1,0 +1,44 @@
+[
+  {
+    "id": "day",
+    "label": "Time Series (5min)",
+    "apiFunction": "TIME_SERIES_INTRADAY",
+    "interval": "5min",
+    "dateRange": 0
+  },
+  {
+    "id": "week",
+    "label": "Time Series (60min)",
+    "apiFunction": "TIME_SERIES_INTRADAY",
+    "interval": "60min",
+    "dateRange": -5
+  },
+  {
+    "id": "month",
+    "label": "Time Series (60min)",
+    "apiFunction": "TIME_SERIES_INTRADAY",
+    "interval": "60min",
+    "dateRange": -30
+  },
+  {
+    "id": "sixMonth",
+    "label": "Weekly Time Series",
+    "apiFunction": "TIME_SERIES_WEEKLY",
+    "interval": null,
+    "dateRange": -180
+  },
+  {
+    "id": "year",
+    "label": "Weekly Time Series",
+    "apiFunction": "TIME_SERIES_WEEKLY",
+    "interval": null,
+    "dateRange": -365
+  },
+  {
+    "id": "fiveYear",
+    "label": "Weekly Time Series",
+    "apiFunction": "TIME_SERIES_WEEKLY",
+    "interval": null,
+    "dateRange": 1825
+  }
+]

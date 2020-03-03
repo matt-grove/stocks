@@ -14,7 +14,10 @@ import AlphaData from '../data/alpha';
 const TimeSeries = () => {
   const [alphaData, setAlphaData] = useState(null);
   useEffect(() => {
+
     const runner = async () => {
+      const b = await apiRequest()
+      console.log(b)
       const a = await convertData(AlphaData);
       setAlphaData(a);
     }
@@ -27,7 +30,14 @@ const TimeSeries = () => {
     <div className='plot-container'>
       { alphaData === null ?
         <h1 className='white'>loading...</h1> :
-        <ResponsiveLine data={ alphaData } {...lineProperties} />
+          <>
+            <ResponsiveLine data={ alphaData } {...lineProperties} />
+            <button>1D</button>
+            <button>1W</button>
+            <button>1M</button>
+            <button>3M</button>
+            <button>1Y</button>
+          </>
       }
     </div>
   )

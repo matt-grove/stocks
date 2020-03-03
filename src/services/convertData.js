@@ -6,7 +6,6 @@ const convertData = async (apiReq) => {
       const item = {};
       item.x = key;
       item.y = inputData[key]['4. close'];
-      console.log(result)
       result.push(item);
       return result;
   }, []);

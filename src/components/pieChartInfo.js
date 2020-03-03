@@ -1,4 +1,5 @@
 import React from 'react';
+
 const pieProperties = {
   innerRadius: 0.83,
   margin: { top: 40, right: 80, bottom: 80, left: 80 },
