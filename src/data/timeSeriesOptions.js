@@ -1,4 +1,4 @@
-const colors = { '5min': '#13E2C9' };
+const colors = { 'line': '#13E2C9' };
 const getColor = line => colors[line.id];
 
 const lineProperties = {

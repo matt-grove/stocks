@@ -1,7 +1,10 @@
-const convertData = async (apiReq) => {
+
+
+const convertData = (data, options) => {
+  console.log(data)
+  if (data===null) return null;
   let output;
-  const data = await apiReq;
-  const inputData = data.data["Time Series (5min)"];
+  const inputData = data.data[options.label];
   const reducedData = Object.keys(inputData).reduce((result, key) => {
       const item = {};
       item.x = key;
@@ -19,7 +22,7 @@ const convertData = async (apiReq) => {
                                                new Date(i.x).getMonth() === today.month
                                          )
 
-  output = [ { "id": "5min", "data": filteredData } ];
+  output = [ { "id": "line", "data": filteredData } ];
   return output;
 }
 

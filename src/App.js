@@ -1,14 +1,11 @@
-import React from 'react';
-import './App.css';
-// import PieChart from './components/pieChart';
-import TimeSeries from './components/timeSeries';
+import React from 'react'
+import './App.css'
+import Main from './components/main'
 
 const App = () => {
   return (
-    <>
-      <TimeSeries/>
-    </>
+    <Main/>
   );
 }
 
-export default App;
+export default App

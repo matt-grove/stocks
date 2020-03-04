@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
-import pieProperties from './pieChartInfo';
+import pieProperties from '../data/pieChartOptions';
 import pieData from '../data/pie';
 import '../styles/pieChart.css';
 

@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
+import staticProperties from '../data/timeSeriesOptions';
 import '../styles/timeSeries.css';
-import convertData from '../services/convertData';
-import lineProperties from './timeSeriesInfo';
-// import apiRequest from '../services/request';
-import AlphaData from '../data/alpha';
-
 
 
 
 const TimeSeries = (props) => {
-  const [alphaData, setAlphaData] = useState(null);
-  useEffect(() => {
 
-    const runner = async () => {
-      // const b = await apiRequest()
-      // console.log(b)
-      const a = await convertData(AlphaData);
-      setAlphaData(a);
-    }
-    runner();
-    },
-  []
-  );
+
 
   return (
     <div className='plot-container'>
-      { alphaData === null ?
+      { props.alphaData === null ?
         <h1 className='white'>loading...</h1> :
           <>
-            <ResponsiveLine data={ alphaData } {...lineProperties} />
-            <button>1D</button>
+            <ResponsiveLine
+              data={ props.alphaData }
+              {...staticProperties} />
+            <button onClick={() => props.handleOptions() }>1D</button>
             <button>1W</button>
             <button>1M</button>
             <button>3M</button>
