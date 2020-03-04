@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import PieChart from './components/pieChart';
+// import PieChart from './components/pieChart';
 import TimeSeries from './components/timeSeries';
 
- const App = () => {
+const App = () => {
   return (
     <>
       <TimeSeries/>
-      <PieChart/>
     </>
   );
 }
