@@ -5,7 +5,7 @@ import TimeSeries from './timeSeries'
 import convertData from '../services/convertData'
 import apiRequest from '../services/request'
 
-import AlphaData from '../data/alpha'
+// import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
 
 const Main = () => {
@@ -24,14 +24,9 @@ const Main = () => {
   [])
 
 
-
-
-
-
   const handleOptions = async (options) => {
     console.log('yesssss')
     const inputData = await apiRequest(apiSchema[1])
-    const outputData = convertData(inputData, apiSchema[1])
     setTimeSeries({data: inputData, options: apiSchema[1]})
   }
 

@@ -1,8 +1,7 @@
-
-
 const convertData = (data, options) => {
   console.log(data)
-  if (data===null) return null;
+  // console.log(data.data[options.label])
+  if (data===null || data.data < 2) return null;
   let output;
   const inputData = data.data[options.label];
   const reducedData = Object.keys(inputData).reduce((result, key) => {
@@ -13,7 +12,6 @@ const convertData = (data, options) => {
       return result;
   }, []);
 
-
   const today = new Date(Math.max.apply(null,reducedData.map(i=>new Date(i.x))));
   today.date = today.getDate();
   today.month = today.getMonth();
@@ -21,6 +19,8 @@ const convertData = (data, options) => {
   const filteredData = reducedData.filter(i => new Date(i.x).getDate() === today.date &&
                                                new Date(i.x).getMonth() === today.month
                                          )
+
+  // const filteredData = reducedData;
 
   output = [ { "id": "line", "data": filteredData } ];
   return output;

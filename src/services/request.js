@@ -17,6 +17,7 @@ const getData = async (props) => {
 
   catch (err) {
     console.error(err)
+    return null
   }
 }
 
