@@ -1,0 +1,173 @@
+:root {
+  --grey1: hsl(0, 11%, 13%);
+  --grey2: hsl(0, 6%, 26%);
+  --grey3: hsl(0, 0%, 54%);
+  --grey4: hsl(0, 0%, 69%);
+  --grey5: hsl(0, 0%, 93%);
+  --grey6: hsl(214, 100%, 95%); /* Sidebar Selection */
+  --grey7: hsl(216, 71%, 97%);
+  --grey8: hsl(214, 47%, 97%);  /* Sidebar */
+  --grey9: hsl(0, 0%, 100%);
+
+  --main1: hsl(216, 54%, 37%);
+  --main2: hsl(180, 71%, 37%);
+  --main3: hsl(43, 100%, 58%);
+  --main4: hsl(223, 26%, 32%); /* Header */
+
+  --main3-accent: hsl(43, 100%, 50%);
+
+  --grad1: hsl(173, 84%, 48%);
+  --grad2: hsl(180, 100%, 44%);
+  --grad3: hsl(194, 100%, 44%);
+  --grad4: hsl(198, 90%, 80%);
+
+  --emph1: hsl(112, 50%, 56%);
+  --emph2: hsl(0, 84%, 70%);
+
+  --shadow1: hsla(0, 0%, 0%, 0.05);
+  --shadow2: hsla(0, 0%, 0%, 0.07);
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: var(--text-main);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 48px;
+  color: var(--main1);
+  letter-spacing: -2px;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 30px;
+  color: var(--main1);
+  letter-spacing: -1.5px;
+  font-weight: 600;
+  line-height: 30px;
+
+}
+
+h3 {
+  font-size: 22px;
+  color: var(--main1);
+  letter-spacing: -0.5px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 16px;
+  color: var(--main2);
+  letter-spacing: -0.4px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 14px;
+  color: var(--main1);
+  letter-spacing: -0.4px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+h6 {
+  font-size: 12px;
+  color: var(--grey4);
+  letter-spacing: -0.4px;
+  line-height: 12px;
+
+}
+
+.main2-text {
+  color: var(--main2);
+}
+
+.emph1-text {
+  color: var(--emph1);
+}
+
+.emph2-text {
+  color: var(--emph2);
+}
+
+.grey3-text {
+  color: var(--grey3);
+}
+
+.grey4-text {
+  color: var(--grey4);
+  letter-spacing: 2px;
+}
+
+.grey9-text {
+  color: var(--grey9);
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+
+.header {
+  background-color: var(--main4);
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  top:0;
+}
+
+
+
+.content {
+  margin-left: 240px;
+  padding-top: 60px;
+  bottom: 0;
+
+}
+
+.content-grid-container {
+  margin: 0 auto;
+  max-width: 1040px;
+  padding: 40px;
+  /* background: pink; */
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  grid-auto-rows: 140px;
+  justify-content: center;
+  grid-gap: 40px;
+  grid-auto-flow: row dense;
+  /* background: lightgrey; */
+}
