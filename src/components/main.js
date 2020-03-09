@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 // import PieChart from './pieChart'
-import TimeSeries from './timeSeries'
+
+import Header from './header'
+import Sidebar from './sidebar'
+import Content from './content'
 
 import convertData from '../services/convertData'
 import apiRequest from '../services/request'
 
-// import AlphaData from '../data/alpha'
+import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
+
+import '../styles/main.css'
+
+
 
 const Main = () => {
 
@@ -14,15 +21,13 @@ const Main = () => {
 
   useEffect(() => {
     const asyncContainer = async () => {
-      const data = await apiRequest(apiSchema[0])
-      // const outputData = convertData(AlphaData, timeSeries.options)
+      // const data = await apiRequest(apiSchema[0])
+      const data = AlphaData
       setTimeSeries({data: data, options: apiSchema[0]})
     }
     asyncContainer()
 
-    },
-  [])
-
+  }, [])
 
   const handleOptions = async (options) => {
     console.log('yesssss')
@@ -30,15 +35,17 @@ const Main = () => {
     setTimeSeries({data: inputData, options: apiSchema[1]})
   }
 
-
-
   const convertedData = convertData(timeSeries.data, timeSeries.options)
   console.log(convertedData)
 
   return (
-    <TimeSeries
-      alphaData={ convertedData }
-      handleOptions={ handleOptions }/>
+    <>
+      <Header/>
+      <Sidebar/>
+      <Content
+        alphaData={convertedData}
+        handleOptions={handleOptions}/>
+    </>
   )
 }
 

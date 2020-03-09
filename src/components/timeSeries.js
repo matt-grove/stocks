@@ -1,23 +1,24 @@
-import React from 'react';
-import { ResponsiveLine } from '@nivo/line';
-import staticProperties from '../data/timeSeriesOptions';
-import '../styles/timeSeries.css';
+import React from 'react'
+import { ResponsiveLine } from '@nivo/line'
+import staticProperties from '../data/timeSeriesOptions'
+import '../styles/timeSeries.css'
 
 
 
 const TimeSeries = (props) => {
 
-
+  const { alphaData, handleOptions } = props
 
   return (
+    <div className='cell cw-2 ch-1 c-double'>
     <div className='plot-container'>
-      { props.alphaData === null ?
+      { alphaData === null ?
         <h1 className='white'>loading...</h1> :
           <>
             <ResponsiveLine
-              data={ props.alphaData }
+              data={ alphaData }
               {...staticProperties} />
-            <button onClick={() => props.handleOptions() }>1D</button>
+            <button onClick={() => handleOptions() }>1D</button>
             <button>1W</button>
             <button>1M</button>
             <button>3M</button>
@@ -25,6 +26,7 @@ const TimeSeries = (props) => {
           </>
       }
     </div>
+  </div>
   )
 }
 

@@ -2,7 +2,7 @@
   background-color: var(--grey9);
   border-radius: 8px;
   box-shadow: 0 2px 40px var(--shadow1), 0 2px 15px var(--shadow2);
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .cw-2 {
