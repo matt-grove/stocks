@@ -1,6 +1,4 @@
 const convertData = (data, options) => {
-  console.log(data)
-  // console.log(data.data[options.label])
   if (data===null || data.data < 2) return null;
   let output;
   const inputData = data.data[options.label];
@@ -19,8 +17,6 @@ const convertData = (data, options) => {
   const filteredData = reducedData.filter(i => new Date(i.x).getDate() === today.date &&
                                                new Date(i.x).getMonth() === today.month
                                          )
-
-  // const filteredData = reducedData;
 
   output = [ { "id": "line", "data": filteredData } ];
   return output;

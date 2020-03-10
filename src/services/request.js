@@ -1,8 +1,7 @@
 import axios from 'axios'
 import apiSchema from '../data/apiSchema'
 
-const getData = async (props) => {
-  const {apiFunction, interval} = props
+const getData = async (apiFunction, interval) => {
   const key = process.env.REACT_APP_STOCKS_API_KEY
   const symbol = "GPRO"
   const api = "https://www.alphavantage.co/query?" +
@@ -20,5 +19,7 @@ const getData = async (props) => {
     return null
   }
 }
+
+
 
 export default getData

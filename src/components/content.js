@@ -2,10 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PieChart from './pieChart'
 import TimeSeries from './timeSeries'
-
 import '../styles/cell.css'
-
-
 
 const Content = (props) => {
   const { alphaData, handleOptions } = props
@@ -25,6 +22,12 @@ const Content = (props) => {
       </div>
     </main>
   )
+}
+
+
+Content.propTypes = {
+  alphaData: PropTypes.array,
+  handleOptions: PropTypes.func.isRequired
 }
 
 export default Content

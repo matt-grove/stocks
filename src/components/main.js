@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from 'react'
-
 import Header from './header'
 import Sidebar from './sidebar'
 import Content from './content'
-
 import convertData from '../services/convertData'
 import apiRequest from '../services/request'
-
 import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
 
@@ -35,7 +32,7 @@ const Main = () => {
   }
 
   const convertedData = convertData(timeSeries.data, timeSeries.options)
-  console.log(convertedData)
+  // console.log(convertedData)
 
   return (
     <>
@@ -47,5 +44,7 @@ const Main = () => {
     </>
   )
 }
+
+
 
 export default Main
