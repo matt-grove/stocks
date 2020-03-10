@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { ResponsiveLine } from '@nivo/line'
 import staticProperties from '../data/timeSeriesOptions'
 import '../styles/timeSeries.css'
@@ -28,6 +29,11 @@ const TimeSeries = (props) => {
     </div>
   </div>
   )
+}
+
+TimeSeries.propTypes = {
+  alphaData: PropTypes.array,
+  handleOptions: PropTypes.func.isRequired
 }
 
 export default TimeSeries;
