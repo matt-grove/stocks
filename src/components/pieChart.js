@@ -6,8 +6,10 @@ import '../styles/pieChart.css';
 
 const PieChart = (props) => {
   return (
-    <div className='plot-container'>
-      <ResponsivePie data={ pieData } { ...pieProperties }/>
+    <div className='cell ch-1'>
+      <div className='plot-container'>
+        <ResponsivePie data={ pieData } { ...pieProperties }/>
+      </div>
     </div>
   )
 }

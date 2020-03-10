@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-// import PieChart from './pieChart'
 
 import Header from './header'
 import Sidebar from './sidebar'
