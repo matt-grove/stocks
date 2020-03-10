@@ -6,9 +6,7 @@
 
 `npm start` to run
 
-`REACT_APP_STOCKS_API_KEY` is required as environment variable.
-
-A Valid API Token can be obtained a the Alpha Vantage website [here](https://www.alphavantage.co/support/#api-key)
+`REACT_APP_STOCKS_API_KEY` is required as environment variable. A Valid API Token can be obtained at the Alpha Vantage website [here](https://www.alphavantage.co/support/#api-key)
 
 
 ### Task List
@@ -19,5 +17,6 @@ A Valid API Token can be obtained a the Alpha Vantage website [here](https://www
 - [x] Create Nivo Timeline
 - [x] Create Nivo Pie Chart
 - [x] Load Alpha Vantage API
-- [ ] Load CSS Styling into React Project
+- [x] Load CSS Styling into React Project
 - [ ] Filterable API by Timescales
+- [ ] Pie Info - Addition of basic styling
