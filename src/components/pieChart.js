@@ -9,6 +9,7 @@ const PieChart = (props) => {
     <div className='cell ch-1'>
       <div className='plot-container'>
         <ResponsivePie data={ pieData } { ...pieProperties }/>
+        <h1>3.8%</h1>
       </div>
     </div>
   )

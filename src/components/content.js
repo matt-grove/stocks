@@ -15,14 +15,12 @@ const Content = (props) => {
       <div className='content-grid-container'>
         <div className='content-grid'>
           <TimeSeries alphaData={alphaData} handleOptions={handleOptions}/>
-
           <div className='cell ch-1'></div>
           <PieChart/>
           <div className='cell ch-1'></div>
           <div className='cell'></div>
           <div className='cell'></div>
           <div className='cell ch-1'></div>
-
         </div>
       </div>
     </main>
