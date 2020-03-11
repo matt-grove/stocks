@@ -28,7 +28,6 @@
   --shadow2: hsla(0, 0%, 0%, 0.07);
 }
 
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -137,7 +136,6 @@ h6 {
   width: 100%;
 }
 
-
 .header {
   background-color: var(--main4);
   height: 60px;
@@ -147,20 +145,16 @@ h6 {
   z-index: 1;
 }
 
-
-
 .content {
   margin-left: 240px;
   padding-top: 60px;
   bottom: 0;
-
 }
 
 .content-grid-container {
   margin: 0 auto;
   max-width: 1040px;
   padding: 40px;
-  /* background: pink; */
 }
 
 .content-grid {
@@ -170,5 +164,13 @@ h6 {
   justify-content: center;
   grid-gap: 40px;
   grid-auto-flow: row dense;
-  /* background: lightgrey; */
+}
+
+.no-highlight {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }

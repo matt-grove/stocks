@@ -6,7 +6,6 @@ import convertData from '../services/convertData'
 import apiRequest from '../services/request'
 import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
-
 import '../styles/main.css'
 
 

@@ -6,7 +6,7 @@ import '../styles/pieChart.css'
 
 const PieChart = (props) => {
   return (
-    <div className='cell ch-1'>
+    <div className='cell ch-1 no-highlight'>
       <div className='pie-info-container'>
         <div className='pie-info'>
           <h1 className='pie-h1'>3.8%</h1>

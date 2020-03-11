@@ -13,10 +13,10 @@ const lineProperties = {
   isInteractive: true,
   motionStiffness: 300,
   margin: {
-    top: 50,
-    right: 50,
+    top: 30,
+    right: 30,
     bottom: 50,
-    left: 60
+    left: 70
   },
   yScale: {
     type: 'linear',
@@ -30,10 +30,7 @@ const lineProperties = {
      format: "%Y-%m-%d %H:%M:%S",
      precision: "second"
   },
-  axisBottom: {
-    format: "%H:%M",
-    tickValues: "every 1 hours"
-  }
+  axisBottom: null
 }
 
 export default lineProperties;

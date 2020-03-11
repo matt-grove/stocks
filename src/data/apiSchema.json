@@ -1,44 +1,50 @@
 [
   {
-    "id": "day",
+    "id": "1D",
     "label": "Time Series (5min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
     "interval": "5min",
-    "dateRange": 0
+    "dateRange": 0,
+    "active": true
   },
   {
-    "id": "week",
+    "id": "1W",
     "label": "Time Series (60min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
     "interval": "60min",
-    "dateRange": -5
+    "dateRange": -5,
+    "active": false
   },
   {
-    "id": "month",
+    "id": "1M",
     "label": "Time Series (60min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
     "interval": "60min",
-    "dateRange": -30
+    "dateRange": -30,
+    "active": false
   },
   {
-    "id": "sixMonth",
+    "id": "6M",
     "label": "Weekly Time Series",
     "apiFunction": "TIME_SERIES_WEEKLY",
     "interval": null,
-    "dateRange": -180
+    "dateRange": -180,
+    "active": false
   },
   {
-    "id": "year",
+    "id": "1Y",
     "label": "Weekly Time Series",
     "apiFunction": "TIME_SERIES_WEEKLY",
     "interval": null,
-    "dateRange": -365
+    "dateRange": -365,
+    "active": false
   },
   {
-    "id": "fiveYear",
+    "id": "5Y",
     "label": "Weekly Time Series",
     "apiFunction": "TIME_SERIES_WEEKLY",
     "interval": null,
-    "dateRange": 1825
+    "dateRange": 1825,
+    "active": false
   }
 ]

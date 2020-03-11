@@ -1,0 +1,19 @@
+<button onClick={() => handleOptions() }>1D</button>
+<button>1W</button>
+<button>1M</button>
+<button>3M</button>
+<button>1Y</button>
+
+
+
+
+,
+xScale: {
+   type: "time",
+   format: "%Y-%m-%d %H:%M:%S",
+   precision: "second"
+},
+axisBottom: {
+  format: "%H:%M",
+  tickValues: "every 1 hours"
+}

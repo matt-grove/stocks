@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import PieChart from './pieChart'
-import TimeSeries from './timeSeries'
+import TimeSeries from './cellTimeSeries'
 import '../styles/cell.css'
 
 const Content = (props) => {
