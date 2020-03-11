@@ -4,11 +4,9 @@ import Sidebar from './sidebar'
 import Content from './content'
 import convertData from '../services/convertData'
 import apiRequest from '../services/request'
-import AlphaData from '../data/alpha'
+// import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
 import '../styles/main.css'
-
-
 
 const Main = () => {
 
@@ -16,8 +14,8 @@ const Main = () => {
 
   useEffect(() => {
     const asyncContainer = async () => {
-      // const data = await apiRequest(apiSchema[0])
-      const data = AlphaData
+      const data = await apiRequest(apiSchema[0])
+      // const data = AlphaData
       setTimeSeries({data: data, options: apiSchema[0]})
     }
     asyncContainer()

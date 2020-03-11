@@ -13,9 +13,9 @@ const lineProperties = {
   isInteractive: true,
   motionStiffness: 300,
   margin: {
-    top: 30,
+    top: 90,
     right: 30,
-    bottom: 50,
+    bottom: 40,
     left: 70
   },
   yScale: {

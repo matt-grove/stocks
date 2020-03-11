@@ -1,4 +1,5 @@
 const convertData = (data, options) => {
+  console.log(data)
   if (data===null || data.data < 2) return null;
   let output;
   const inputData = data.data[options.label];

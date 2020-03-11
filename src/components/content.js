@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PieChart from './pieChart'
+import PieChart from './cellPieChart'
 import TimeSeries from './cellTimeSeries'
 import '../styles/cell.css'
 

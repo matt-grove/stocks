@@ -1,15 +1,13 @@
 import axios from 'axios'
-import apiSchema from '../data/apiSchema'
 
-const getData = async (apiFunction, interval) => {
+const getData = async (apiSchema) => {
   const key = process.env.REACT_APP_STOCKS_API_KEY
   const symbol = "GPRO"
   const api = "https://www.alphavantage.co/query?" +
-              "function=" + apiFunction +
+              "function=" + apiSchema.apiFunction +
               "&apikey=" + key +
               "&symbol=" + symbol +
-              ((interval===null) ? "" : "&interval=" + interval)
-
+              ((apiSchema.interval===null) ? "" : "&interval=" + apiSchema.interval)
   try {
     return await axios.get(api)
   }

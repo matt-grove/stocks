@@ -127,6 +127,11 @@ h6 {
   /* letter-spacing: 2px; */
 }
 
+.grey5-text {
+  color: var(--grey5);
+  /* letter-spacing: 2px; */
+}
+
 .grey9-text {
   color: var(--grey9);
 }
