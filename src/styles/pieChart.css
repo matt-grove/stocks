@@ -1,3 +1,32 @@
-.plot-container {
-  height: 400px;
+.pie-plot-container {
+  height: 320px;
+}
+
+.pie-container {
+
+}
+
+.pie-info {
+
+  margin:auto;
+  margin-left: 110px;
+}
+
+.pie-info-container {
+  width: 320px;
+  height: 320px;
+  display: flex;
+  position: absolute;
+}
+
+.pie-h1 {
+  margin-top: 10px;
+}
+
+.pie-h4 {
+  width: 140px;
+}
+
+.pie-h5 {
+  margin-top: 5px;
 }

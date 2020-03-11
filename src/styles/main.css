@@ -125,7 +125,7 @@ h6 {
 
 .grey4-text {
   color: var(--grey4);
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 
 .grey9-text {

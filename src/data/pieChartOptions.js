@@ -2,7 +2,7 @@ import React from 'react';
 
 const pieProperties = {
   innerRadius: 0.83,
-  margin: { top: 30, right: 30, bottom: 30, left: 30 },
+  margin: { top: 10, right: 30, bottom: 30, left: 30 },
   startAngle: -120,
   endAngle: 120,
   enableRadialLabels: false,
