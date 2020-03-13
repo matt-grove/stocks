@@ -6,12 +6,13 @@ import staticProperties from '../data/timeSeriesOptions'
 
 
 const Timeline = (props) => {
-  const {alphaData} = props
+  const { timeSeriesData } = props
+  console.log(timeSeriesData)
   return (
     <div className='plot-container-wrapper'>
       <div className='plot-container'>
         <ResponsiveLine
-          data={ alphaData }
+          data={ timeSeriesData }
           { ...staticProperties } />
       </div>
     </div>
@@ -19,7 +20,7 @@ const Timeline = (props) => {
 }
 
 Timeline.propTypes = {
-  alphaData: PropTypes.array.isRequired
+  timeSeriesData: PropTypes.array.isRequired
 }
 
 export default Timeline;
