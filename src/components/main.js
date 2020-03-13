@@ -34,7 +34,6 @@ const Main = () => {
   }
 
   const convertedData = convertData(timeSeries.data, timeSeries.options)
-  console.log(convertedData)
   return (
     <>
       <Header/>

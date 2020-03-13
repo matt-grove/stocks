@@ -6,6 +6,7 @@ import TimeText from './timeText'
 import '../styles/timeSeries.css'
 import apiSchema from '../data/apiSchema'
 
+
 const TimeSeries = (props) => {
   const [currentSelection] = useState(apiSchema)
   const { alphaData } = props
