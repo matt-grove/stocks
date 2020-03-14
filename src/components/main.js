@@ -15,8 +15,7 @@ import apiSchema from '../data/apiSchema'
 const Main = () => {
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
-  const apiString = apiStringify('GPRO', key, apiSchema[0])
-
+  const [apiString] = useState(apiStringify('GPRO', key, apiSchema[0]))
   const [timeSeries, setTimeSeries] = useState({data: null,
                                                 active: apiSchema[0],
                                                 options: apiSchema})
