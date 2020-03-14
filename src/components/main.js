@@ -32,12 +32,16 @@ const Main = () => {
   }, [])
 
 
-  const handleTimePeriod = async (options) => {
-    console.log("Time Period Toggled")
-    const inputData = await apiRequest(apiStringify('GPRO', key, apiSchema[1]))
-    const tsOptions = [...timeSeries.options]
-    console.log(tsOptions)
-    setTimeSeries({data: inputData, active: apiSchema[1], options: apiSchema})
+  const handleTimePeriod = async (currentSelection) => {
+    if (timeSeries.options.id === currentSelection.id) return
+    const inputData = await apiRequest(apiStringify('GPRO', key, currentSelection))
+    console.log(inputData)
+    let tsOptions = [...timeSeries.options]
+    tsOptions = tsOptions.map(d => {
+      (d.id=== currentSelection.id) ? d.active = true: d.active = false
+      return d;
+    })
+    setTimeSeries({data: inputData, active: currentSelection, options: tsOptions})
   }
 
 

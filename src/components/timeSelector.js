@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const TimeSelection = ({ handleTimePeriod, timeSeriesActive, timeSeriesOptions}) => {
-  console.log(timeSeriesOptions)
   const buttonCollection = timeSeriesOptions.map(t => {
     return (
       <div
         key={t.id}
-        onClick={() => handleTimePeriod()}
+        onClick={() => handleTimePeriod(t)}
         className={
           (t.active)?
           'time-selector time-selector-selected':

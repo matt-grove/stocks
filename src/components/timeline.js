@@ -7,7 +7,6 @@ import staticProperties from '../data/timeSeriesOptions'
 
 const Timeline = (props) => {
   const { timeSeriesData } = props
-  console.log(timeSeriesData)
   return (
     <div className='plot-container-wrapper'>
       <div className='plot-container'>

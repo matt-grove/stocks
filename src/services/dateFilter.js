@@ -1,5 +1,4 @@
 const dateFilter = ( inputData, options ) => {
-  console.log(inputData)
   if (!inputData) return null
 
   const innerDataTimeSeries = inputData.data[options.label]
