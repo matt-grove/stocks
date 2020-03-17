@@ -5,7 +5,7 @@ import TimeSeries from './cellTimeSeries'
 import '../styles/cell.css'
 
 const Content = (props) => {
-  const { timeSeriesData, handleTimePeriod, timeSeriesActive, timeSeriesOptions } = props
+  const { timeSeriesData, handleTimePeriod, timeSeriesActive, timeSeriesOptions, currentValue } = props
   return (
     <main className='content'>
       <div className='content-grid-container'>
@@ -14,7 +14,8 @@ const Content = (props) => {
             timeSeriesData={ timeSeriesData }
             timeSeriesActive={ timeSeriesActive }
             handleTimePeriod={ handleTimePeriod }
-            timeSeriesOptions={ timeSeriesOptions }/>
+            timeSeriesOptions={ timeSeriesOptions }
+            currentValue={ currentValue }/>
           <div className='cell ch-1'></div>
           <PieChart/>
           <div className='cell ch-1'></div>
@@ -28,10 +29,11 @@ const Content = (props) => {
 }
 
 Content.propTypes = {
-  timeSeriesData: PropTypes.array,
+  timeSeriesData: PropTypes.object,
   timeSeriesActive: PropTypes.object,
   timeSeriesOptions: PropTypes.array,
-  handleTimePeriod: PropTypes.func.isRequired
+  handleTimePeriod: PropTypes.func.isRequired,
+  currentValue: PropTypes.object
 }
 
 export default Content

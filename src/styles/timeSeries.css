@@ -1,15 +1,42 @@
-.plot-container-wrapper {
+.timeline-container {
+  display: flex;
+}
+
+.timeline-main-content {
   flex: 1;
   min-width: 0;
 }
 
-.plot-container {
-  height: 320px;
+.timeline-text {
+  margin: 20px 30px 0 65px;
 }
 
-.timeline-container {
+.timeline-text-row {
   display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
+
+
+
+
+
+
+.plot-container {
+  height: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .time-selection {
   flex: 0 0 55px;
@@ -44,12 +71,6 @@
 
 .time-selector-content {
   margin: auto;
-}
-
-.time-stock-name {
-  position: absolute;
-  margin-left: 65px;
-  margin-top: 20px;
 }
 
 .time-placeholder-wrapper {

@@ -3,10 +3,9 @@ import Header from './header'
 import Sidebar from './sidebar'
 import Content from './content'
 import '../styles/main.css'
-import convertData from '../services/convertData'
 import apiRequest from '../services/request'
 import apiStringify from '../services/apiStringify'
-import dateFilter from '../services/dateFilter'
+import filterByDate from '../services/dateFilter'
 import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
 
@@ -30,23 +29,43 @@ const Main = () => {
 
   }, [])
 
-
   const handleTimePeriod = async (currentSelection) => {
-    if (timeSeries.options.id === currentSelection.id) return
-    const inputData = await apiRequest(apiStringify('GPRO', key, currentSelection))
-    console.log(inputData)
-    let tsOptions = [...timeSeries.options]
-    tsOptions = tsOptions.map(d => {
-      (d.id=== currentSelection.id) ? d.active = true: d.active = false
-      return d;
-    })
-    setTimeSeries({data: inputData, active: currentSelection, options: tsOptions})
+    if (timeSeries.options.id === currentSelection.id) { console.log('no changes')}
+    else {
+      const inputData = await apiRequest(apiStringify('GPRO', key, currentSelection))
+      console.log(inputData)
+      let tsOptions = [...timeSeries.options]
+      tsOptions = tsOptions.map(d => {
+        (d.id=== currentSelection.id) ? d.active = true: d.active = false
+        return d;
+      })
+      setTimeSeries({data: inputData, active: currentSelection, options: tsOptions})
+    }
+
+
   }
 
+  const filteredData = filterByDate(timeSeries.data, timeSeries.active)
 
+  const currentValue = () => {
+    if (timeSeries.data != null) {
+      const timeseriesData = timeSeries.data.data[timeSeries.active.label]
+      const maxDate = new Date(Math.max.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
 
-  const filteredData = dateFilter(timeSeries.data, timeSeries.active)
-  const convertedData = convertData(filteredData, timeSeries.active)
+      const output = Object.keys(timeseriesData)
+        .reduce( (agg, key) => {
+            if (new Date(key).valueOf() === maxDate.valueOf()) {
+              return timeseriesData[key]
+            }
+            return agg
+        }, {})
+
+        return output
+    }
+
+  }
+
+  console.log(currentValue())
 
 
   return (
@@ -54,10 +73,11 @@ const Main = () => {
       <Header/>
       <Sidebar/>
       <Content
-        timeSeriesData={ convertedData }
+        timeSeriesData={ filteredData }
         timeSeriesActive={ timeSeries.active }
         timeSeriesOptions={ timeSeries.options }
-        handleTimePeriod={ handleTimePeriod }/>
+        handleTimePeriod={ handleTimePeriod }
+        currentValue={ currentValue() }/>
     </>
   )
 }
