@@ -4,7 +4,7 @@ const dateFilter = ( inputData, options ) => {
   const innerDataTimeSeries = inputData.data[options.label]
   let openDate = new Date(Math.max.apply(null, Object.keys(innerDataTimeSeries).map(d => new Date( d ))))
   openDate.setHours(0,0,0,0)
-  openDate.setDate(openDate.getDate() - options.dateRange);
+  openDate.setDate(openDate.getDate() - options.dateRange)
 
   const filteredData = Object.keys(innerDataTimeSeries)
     .filter(
@@ -12,7 +12,7 @@ const dateFilter = ( inputData, options ) => {
     )
     .reduce( (agg, key) => {
             agg[key] = innerDataTimeSeries[key]
-            return agg;
+            return agg
     }, {})
 
   return { ...inputData, data: {...inputData.data, [options.label]: filteredData} }

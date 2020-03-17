@@ -6,6 +6,7 @@ import '../styles/cell.css'
 
 const Content = (props) => {
   const { timeSeriesData, handleTimePeriod, timeSeriesActive, timeSeriesOptions, currentValue } = props
+
   return (
     <main className='content'>
       <div className='content-grid-container'>
@@ -33,7 +34,7 @@ Content.propTypes = {
   timeSeriesActive: PropTypes.object,
   timeSeriesOptions: PropTypes.array,
   handleTimePeriod: PropTypes.func.isRequired,
-  currentValue: PropTypes.object
+  currentValue: PropTypes.array
 }
 
 export default Content

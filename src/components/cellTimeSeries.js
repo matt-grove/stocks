@@ -45,7 +45,7 @@ TimeSeries.propTypes = {
   timeSeriesOptions: PropTypes.array,
   timeSeriesActive: PropTypes.object,
   handleTimePeriod: PropTypes.func.isRequired,
-  currentValue: PropTypes.object
+  currentValue: PropTypes.array
 }
 
 export default TimeSeries;

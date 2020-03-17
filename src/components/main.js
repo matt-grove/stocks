@@ -33,39 +33,37 @@ const Main = () => {
     if (timeSeries.options.id === currentSelection.id) { console.log('no changes')}
     else {
       const inputData = await apiRequest(apiStringify('GPRO', key, currentSelection))
-      console.log(inputData)
       let tsOptions = [...timeSeries.options]
       tsOptions = tsOptions.map(d => {
         (d.id=== currentSelection.id) ? d.active = true: d.active = false
-        return d;
+        return d
       })
       setTimeSeries({data: inputData, active: currentSelection, options: tsOptions})
     }
-
-
   }
 
   const filteredData = filterByDate(timeSeries.data, timeSeries.active)
 
+
   const currentValue = () => {
-    if (timeSeries.data != null) {
-      const timeseriesData = timeSeries.data.data[timeSeries.active.label]
+    if (filteredData != null) {
+      const timeseriesData = filteredData.data[timeSeries.active.label]
       const maxDate = new Date(Math.max.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
+      const minDate = new Date(Math.min.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
 
       const output = Object.keys(timeseriesData)
         .reduce( (agg, key) => {
-            if (new Date(key).valueOf() === maxDate.valueOf()) {
-              return timeseriesData[key]
+            if (new Date(key).valueOf() === maxDate.valueOf() ||
+                new Date(key).valueOf() === minDate.valueOf()) {
+              agg.push(timeseriesData[key])
+              return agg
             }
             return agg
-        }, {})
+        }, [])
 
         return output
     }
-
   }
-
-  console.log(currentValue())
 
 
   return (

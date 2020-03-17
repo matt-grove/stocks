@@ -3,12 +3,12 @@ import React from 'react'
 
 const TimeText = ({currentValue}) => {
 
-  console.log(currentValue['4. close'])
+  console.log(currentValue)
 
 
     const current = {}
-    current.close = Number(currentValue['4. close']).toFixed(2)
-    current.pct = ((Number(currentValue['4. close']) / Number(currentValue['1. open'])) -1).toFixed(2)
+    current.close = Number(currentValue[0]['4. close']).toFixed(2)
+    current.pct = ((Number(currentValue[0]['4. close']) / Number(currentValue[1]['1. open'])) -1).toFixed(2)
 
 
 
