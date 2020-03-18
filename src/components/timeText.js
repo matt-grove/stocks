@@ -13,14 +13,23 @@ const TimeText = ({currentValue}) => {
 
 
   return (
-    <div className='timeline-text'>
-      <div className='timeline-text-row'>
-        <h2 >GPRO</h2>
-        <h3>{current.close}</h3>
+    <div className='time-text'>
+      <div className='time-text-row'>
+        <h2>GPRO</h2>
+        <div className='time-text-right'>
+          <h3>{current.close}</h3>
+        </div>
       </div>
-      <div className='timeline-text-row'>
-        <h4>GoPro, Inc.</h4>
-        <h5>{current.pct}</h5>
+      <div className='time-text-row'>
+
+        <div className='time-text-left'>
+          <h4>GoPro, Inc.</h4>
+        </div>
+
+        <div className='time-text-right'>
+          <h5>{current.pct}</h5>
+        </div>
+
       </div>
     </div>
   )

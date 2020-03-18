@@ -1,28 +1,41 @@
-.timeline-container {
+.time-container {
   display: flex;
 }
 
-.timeline-main-content {
+.time-main-content {
   flex: 1;
   min-width: 0;
 }
 
-.timeline-text {
+.time-text {
   margin: 20px 30px 0 65px;
 }
 
-.timeline-text-row {
+.time-text-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
+.time-text-left {
+  min-width: 0;
+  flex: 1;
+}
+
+.time-text-left > h4 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.time-text-right {
+  min-width: 70px;
+  display: flex;
+  justify-content: flex-end;
+}
 
 
-
-
-
-.plot-container {
+.time-plot-container {
   height: 250px;
 }
 

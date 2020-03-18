@@ -13,7 +13,7 @@ const Timeline = (props) => {
 
 
   return (
-      <div className='plot-container'>
+      <div className='time-plot-container'>
         <ResponsiveLine
           data={ convertedData }
           { ...staticProperties } />

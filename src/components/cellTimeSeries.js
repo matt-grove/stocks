@@ -19,9 +19,9 @@ const TimeSeries = (props) => {
           <h3 className='grey5-text time-placeholder'>loading...</h3>
         </div> :
 
-        <div className='timeline-container'>
+        <div className='time-container'>
 
-          <div className='timeline-main-content'>
+          <div className='time-main-content'>
             <TimeText currentValue={ currentValue }/>
             <TimeLine
               timeSeriesData={ timeSeriesData }
