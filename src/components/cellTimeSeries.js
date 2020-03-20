@@ -8,7 +8,7 @@ import apiSchema from '../data/apiSchema'
 
 
 const TimeSeries = (props) => {
-  const { timeSeriesData, timeSeriesActive, timeSeriesOptions, handleTimePeriod, priceChange } = props
+  const { timeSeriesData, timeSeriesActive, timeSeriesOptions, handleTimePeriod, price } = props
 
   return (
     <div className='cell cw-2 ch-1 c-double no-highlight'>
@@ -22,7 +22,7 @@ const TimeSeries = (props) => {
         <div className='time-container'>
 
           <div className='time-main-content'>
-            <TimeText priceChange={ priceChange }/>
+            <TimeText price={ price }/>
             <TimeLine
               timeSeriesData={ timeSeriesData }
               timeSeriesActive={ timeSeriesActive }/>
@@ -45,7 +45,7 @@ TimeSeries.propTypes = {
   timeSeriesOptions: PropTypes.array,
   timeSeriesActive: PropTypes.object,
   handleTimePeriod: PropTypes.func.isRequired,
-  priceChange: PropTypes.object.isRequired
+  price: PropTypes.object.isRequired
 }
 
 export default TimeSeries;

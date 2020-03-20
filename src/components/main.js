@@ -8,15 +8,13 @@ import apiStringify from '../services/apiStringify'
 import filterByDate from '../services/dateFilter'
 import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
-
+import calculatePrice from '../services/calculatePrice'
 
 
 const Main = () => {
 
-  const initialTimeStep = "Time Series (5min)"
-
   const key = process.env.REACT_APP_STOCKS_API_KEY
-  const [priceChange, setPriceChange] = useState({close: '', pct: ''})
+  const [price, setPrice] = useState({close: '', change: ''})
   const [apiString, setApiString] = useState(apiStringify('GPRO', key, apiSchema[0]))
   const [timeSeries, setTimeSeries] = useState({data: null,
                                                 active: apiSchema[0],
@@ -32,7 +30,7 @@ const Main = () => {
                      options: apiSchema,
                      active: apiSchema[0],
                      initialData: data})
-      setPriceChange(calculatePrice(data))
+      setPrice(calculatePrice(data))
     }
     asyncContainer()
 
@@ -60,41 +58,6 @@ const Main = () => {
 
 
 
-  const calculatePrice = (data) => {
-
-    if (!data) return ({close: '', pct: ''});
-      console.log("Current Value Calculations Ran")
-
-      const timeseriesData = data.data[initialTimeStep]
-
-      const currentClose = new Date(Math.max.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
-
-      let previousClose = new Date(Math.max.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
-
-      previousClose.setDate(previousClose.getDate() -1)
-
-      const previousDay = Object.keys(timeseriesData).filter( d => new Date(d).getDate() === previousClose.getDate() &&
-                                                      new Date(d).getFullYear() === previousClose.getFullYear() &&
-                                                      new Date(d).getMonth() === previousClose.getMonth() )
-
-      previousClose = new Date(Math.max.apply(null, previousDay.map(d => new Date( d ))))
-
-      const output = Object.keys(timeseriesData)
-        .reduce( (agg, key) => {
-            if (new Date(key).valueOf() === currentClose.valueOf() ||
-                new Date(key).valueOf() === previousClose.valueOf()) {
-              agg.push(timeseriesData[key])
-              return agg
-            }
-            return agg
-        }, [])
-
-      const current = {}
-      current.close = Number(output[0]['4. close']).toFixed(2)
-      current.pct = ((Number(output[0]['4. close']) / Number(output[1]['1. open'])) -1).toFixed(2)
-      return current
-  }
-
 
   return (
     <>
@@ -105,7 +68,7 @@ const Main = () => {
         timeSeriesActive={ timeSeries.active }
         timeSeriesOptions={ timeSeries.options }
         handleTimePeriod={ handleTimePeriod }
-        priceChange={ priceChange }/>
+        price={ price }/>
     </>
   )
 }
