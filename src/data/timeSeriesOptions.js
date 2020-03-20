@@ -1,8 +1,6 @@
 import React from 'react'
-const colors = { 'line': '#13E2C9' };
-const getColor = line => colors[line.id];
-
-
+const colors = { 'line': '#13E2C9' }
+const getColor = line => colors[line.id]
 
 const lineProperties = {
   colors: getColor,
@@ -34,11 +32,15 @@ const lineProperties = {
   axisBottom: null,
 
   sliceTooltip: ( { slice } ) => (
-          <h5>
-            { slice.points[0].data.date }
-          </h5>
-
-            )
+    <>
+      <h5>
+        { slice.points[0].data.date }
+      </h5>
+      <h6>
+        { slice.points[0].data.time }
+      </h6>
+    </>
+  )
 }
 
 export default lineProperties;

@@ -20,6 +20,8 @@
 - [x] Load CSS Styling into React Project
 - [x] Filterable API by Timescales
 - [x] timeText Overflow
-- [ ] Correct working of "Price Change"
-- [ ] Alter view by "Time Series (5min)"
+- [x] Correct working of "Price Change"
+- [x] CSS Styling - Price Change
+- [x] Alter view by "dateRange"
+- [ ] Dark Mode - Alter Colour Dependencies
 - [ ] Pie Info - Addition of basic styling

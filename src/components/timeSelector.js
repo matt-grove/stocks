@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TimeSelection = ({ handleTimePeriod, timeSeriesActive, timeSeriesOptions}) => {
+const TimeSelection = (props) => {
+
+  const  { handleTimePeriod, timeSeriesOptions } = props
+
   const buttonCollection = timeSeriesOptions.map(t => {
     return (
       <div
         key={t.id}
         onClick={() => handleTimePeriod(t)}
         className={
-          (t.active)?
+          (t.active) ?
           'time-selector time-selector-selected':
           'time-selector'}>
         <h5 className='grey3-text time-selector-content'>{t.id}</h5>
@@ -23,6 +26,9 @@ const TimeSelection = ({ handleTimePeriod, timeSeriesActive, timeSeriesOptions})
   )
 }
 
-
+TimeSelection.propTypes = {
+  handleTimePeriod: PropTypes.func.isRequired,
+  timeSeriesOptions: PropTypes.array.isRequired
+}
 
 export default TimeSelection

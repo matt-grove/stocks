@@ -10,7 +10,6 @@ import AlphaData from '../data/alpha'
 import apiSchema from '../data/apiSchema'
 import calculatePrice from '../services/calculatePrice'
 
-
 const Main = () => {
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
@@ -54,10 +53,6 @@ const Main = () => {
   }
 
   const filteredData = filterByDate(timeSeries.data, timeSeries.active)
-
-
-
-
 
   return (
     <>
