@@ -19,7 +19,7 @@
 - [x] Load Alpha Vantage API
 - [x] Load CSS Styling into React Project
 - [x] Filterable API by Timescales
-- [ ] timeText Overflow
+- [x] timeText Overflow
 - [ ] Correct working of "Price Change"
 - [ ] Alter view by "Time Series (5min)"
 - [ ] Pie Info - Addition of basic styling
