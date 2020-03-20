@@ -6,7 +6,8 @@ import TimeText from './timeText'
 import '../styles/timeSeries.css'
 
 const TimeSeries = (props) => {
-  const { timeSeriesData, timeSeriesActive, timeSeriesOptions, handleTimePeriod, price } = props
+  const { timeSeriesData, timeSeriesActive, timeSeriesOptions, handleTimePeriod, price, name } = props
+
 
   return (
     <div className='cell cw-2 ch-1 c-double no-highlight'>
@@ -17,7 +18,10 @@ const TimeSeries = (props) => {
         </div> :
         <div className='time-container'>
           <div className='time-main-content'>
-            <TimeText price={ price }/>
+            <TimeText
+              price={ price }
+              name={ name }
+              />
             <TimeLine
               timeSeriesData={ timeSeriesData }
               timeSeriesActive={ timeSeriesActive }/>
@@ -36,7 +40,8 @@ TimeSeries.propTypes = {
   timeSeriesOptions: PropTypes.array,
   timeSeriesActive: PropTypes.object,
   handleTimePeriod: PropTypes.func.isRequired,
-  price: PropTypes.object.isRequired
+  price: PropTypes.object.isRequired,
+  name: PropTypes.object.isRequired
 }
 
 export default TimeSeries

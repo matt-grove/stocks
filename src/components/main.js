@@ -13,12 +13,13 @@ import calculatePrice from '../services/calculatePrice'
 const Main = () => {
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
-  const [price, setPrice] = useState({close: '', change: ''})
-  const [apiString, setApiString] = useState(apiStringify('GPRO', key, apiSchema[0]))
-  const [timeSeries, setTimeSeries] = useState({data: null,
+  const [name, setName] = useState( {short: 'INF', long: 'Informa Plc.'} )
+  const [price, setPrice] = useState( {close: '', change: ''} )
+  const [apiString, setApiString] = useState( apiStringify(name.short, key, apiSchema[0]) )
+  const [timeSeries, setTimeSeries] = useState( {data: null,
                                                 active: apiSchema[0],
                                                 options: apiSchema,
-                                                initialData: null})
+                                                initialData: null} )
 
 
   useEffect(() => {
@@ -32,14 +33,12 @@ const Main = () => {
       setPrice(calculatePrice(data))
     }
     asyncContainer()
-
-
   }, [])
 
   const handleTimePeriod = async (currentSelection) => {
     if (timeSeries.options.id === currentSelection.id) { console.log('no changes')}
     else {
-      const inputData = await apiRequest(apiStringify('GPRO', key, currentSelection))
+      const inputData = await apiRequest(apiStringify(name.short, key, currentSelection))
       let tsOptions = [...timeSeries.options]
       tsOptions = tsOptions.map(d => {
         (d.id=== currentSelection.id) ? d.active = true: d.active = false
@@ -63,7 +62,8 @@ const Main = () => {
         timeSeriesActive={ timeSeries.active }
         timeSeriesOptions={ timeSeries.options }
         handleTimePeriod={ handleTimePeriod }
-        price={ price }/>
+        price={ price }
+        name={ name }/>
     </>
   )
 }

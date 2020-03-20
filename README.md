@@ -11,6 +11,7 @@
 
 ### Task List
 
+##### General
 - [x] Figma Designs
 - [x] React Base Load
 - [x] Create CSS Styling
@@ -18,10 +19,15 @@
 - [x] Create Nivo Pie Chart
 - [x] Load Alpha Vantage API
 - [x] Load CSS Styling into React Project
+
+
+##### Timeline
 - [x] Filterable API by Timescales
 - [x] timeText Overflow
 - [x] Correct working of "Price Change"
 - [x] CSS Styling - Price Change
 - [x] Alter view by "dateRange"
+- [ ] Correct Heading Source
+- [ ] Decide on Subheading Source
 - [ ] Dark Mode - Alter Colour Dependencies
 - [ ] Pie Info - Addition of basic styling
