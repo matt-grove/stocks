@@ -5,7 +5,6 @@ const apiStringify = (symbol, key, apiSchema) => {
               "&apikey=" + key +
               "&symbol=" + symbol +
               ((apiSchema.interval===null) ? "" : "&interval=" + apiSchema.interval)
-
   return api
 }
 

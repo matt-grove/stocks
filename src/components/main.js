@@ -13,7 +13,7 @@ import calculatePrice from '../services/calculatePrice'
 const Main = () => {
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
-  const [name, setName] = useState( {short: 'INF', long: 'Informa Plc.'} )
+  const [name, setName] = useState( {short: 'GPRO', long: 'GoPro, Inc.'} )
   const [price, setPrice] = useState( {close: '', change: ''} )
   const [apiString, setApiString] = useState( apiStringify(name.short, key, apiSchema[0]) )
   const [timeSeries, setTimeSeries] = useState( {data: null,
