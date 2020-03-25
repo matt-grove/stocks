@@ -21,13 +21,14 @@ const Main = () => {
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
   const [darkMode, setDarkMode] = useState(false)
-  const [name, setName] = useState( {short: stocks[0].short, long: stocks[0].long} )
-  const [price, setPrice] = useState( {close: '', change: ''} )
+  const [name, setName] = useState({ short: stocks[0].short, long: stocks[0].long })
+  const [price, setPrice] = useState({ close: '', change: ''})
   const [apiString, setApiString] = useState( apiStringify(name.short, key, apiSchema[0]) )
-  const [timeSeries, setTimeSeries] = useState( {data: null,
-                                                active: apiSchema[0],
-                                                options: apiSchema,
-                                                initialData: null} )
+  const [timeSeries, setTimeSeries] = useState({ data: null,
+                                                 active: apiSchema[0],
+                                                 options: apiSchema,
+                                                 initialData: null,
+                                                 name: null })
 
 
   useEffect(() => {
@@ -64,8 +65,8 @@ const Main = () => {
   }
 
   const handleActiveStock = (name) => {
-    handleTimePeriod(timeSeries.active)
-    setName({short: name.short, long: name.long})
+    // handleTimePeriod(timeSeries.active)
+    setName({ short: name.short, long: name.long })
   }
 
   const filteredData = filterByDate(timeSeries.data, timeSeries.active)
