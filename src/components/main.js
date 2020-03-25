@@ -19,45 +19,45 @@ import stocks from '../data/stocks'
 
 const Main = () => {
 
-  const key = process.env.REACT_APP_STOCKS_API_KEY
-  const [darkMode, setDarkMode] = useState(false)
-  const [name, setName] = useState({ short: stocks[0].short, long: stocks[0].long })
+  const [data, setData] = useState(null)
   const [price, setPrice] = useState({ close: '', change: ''})
-  const [apiString, setApiString] = useState( apiStringify(name.short, key, apiSchema[0]) )
-  const [timeSeries, setTimeSeries] = useState({ data: null,
-                                                 active: apiSchema[0],
-                                                 options: apiSchema,
-                                                 initialData: null,
-                                                 name: null })
+
+  const [darkMode, setDarkMode] = useState(false)
+
+  const [timePeriod, setTimePeriod] = useState(apiSchema[0])
+  const [stockName, setStockName] = useState({ short: stocks[0].short, long: stocks[0].long })
+
+  const key = process.env.REACT_APP_STOCKS_API_KEY
+
+
 
 
   useEffect(() => {
     const asyncContainer = async () => {
-      const data = await apiRequest(apiString)
-      // const data = AlphaData
-      setTimeSeries({data: data,
-                     options: apiSchema,
-                     active: apiSchema[0],
-                     initialData: data})
+      const data = await apiRequest(apiStringify(stockName.short, key, timePeriod))
+      setData(data)
       setPrice(calculatePrice(data))
     }
     asyncContainer()
-  }, [])
+  }, [stockName, timePeriod])
+
+
+
 
   const handleTimePeriod = async (currentSelection) => {
-    if (timeSeries.options.id === currentSelection.id) { console.log('no changes')}
-    else {
-      const inputData = await apiRequest(apiStringify(name.short, key, currentSelection))
-      let tsOptions = [...timeSeries.options]
-      tsOptions = tsOptions.map(d => {
-        (d.id=== currentSelection.id) ? d.active = true: d.active = false
-        return d
-      })
-      setTimeSeries({data: inputData,
-                     active: currentSelection,
-                     options: tsOptions,
-                     initialData: timeSeries.initialData})
-    }
+    // if (timePeriod.id === currentSelection.id) { console.log('no changes')}
+    // else {
+    //   const inputData = await apiRequest(apiStringify(stockName.short, key, currentSelection))
+    //   let tsOptions = [...timeSeries.options]
+    //   tsOptions = tsOptions.map(d => {
+    //     (d.id=== currentSelection.id) ? d.active = true: d.active = false
+    //     return d
+    //   })
+    //   setTimeSeries({data: inputData,
+    //                  active: currentSelection,
+    //                  options: tsOptions,
+    //                  initialData: timeSeries.initialData})
+    // }
   }
 
   const handleDarkMode = () => {
@@ -66,27 +66,29 @@ const Main = () => {
 
   const handleActiveStock = (name) => {
     // handleTimePeriod(timeSeries.active)
-    setName({ short: name.short, long: name.long })
+    setStockName({ short: name.short, long: name.long })
   }
 
-  const filteredData = filterByDate(timeSeries.data, timeSeries.active)
+  const filteredData = filterByDate(data, timePeriod)
 
   return (
     <div className={(darkMode) ? 'dark-mode' : 'light-mode'}>
       <Header
         handleDarkMode={ handleDarkMode }/>
+
       <Sidebar
         stocks={ stocks }
-        active={ name }
+        active={ stockName }
         price={ price }
         handleActiveStock={ handleActiveStock }/>
+
       <Content
         timeSeriesData={ filteredData }
-        timeSeriesActive={ timeSeries.active }
-        timeSeriesOptions={ timeSeries.options }
+        timeSeriesActive={ timePeriod }
+        timeSeriesOptions={ apiSchema }
         handleTimePeriod={ handleTimePeriod }
         price={ price }
-        name={ name }/>
+        name={ stockName }/>
     </div>
   )
 }
