@@ -1,7 +1,7 @@
 const calculatePrice = (data) => {
 
   if (!data) return ({close: '', change: ''});
-    const initialTimeStep = "Time Series (5min)"
+    const initialTimeStep = "Time Series (1min)"
     const timeseriesData = data.data[initialTimeStep]
     const currentClose = new Date(Math.max.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
 

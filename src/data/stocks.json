@@ -1,0 +1,17 @@
+[{
+    "short": "^FTSE",
+    "long": "FTSE 100"
+  },
+  {
+    "short": "FEZ",
+    "long": "SPDR EURO STOXX 50 EXCHANGE"
+  },
+  {
+    "short": "GPRO",
+    "long": "GoPro, Inc."
+  },
+  {
+    "short": "INF",
+    "long": "Informa Plc."
+  }
+]

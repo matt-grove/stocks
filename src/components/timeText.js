@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const TimeText = ({ price, name }) => {
 
-
   return (
     <div className='time-text'>
       <div className='time-text-row'>
