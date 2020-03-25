@@ -3,6 +3,7 @@ import Header from './header'
 import Sidebar from './sidebar'
 import Content from './content'
 import '../styles/main.css'
+import '../styles/color.css'
 import apiRequest from '../services/request'
 import apiStringify from '../services/apiStringify'
 import filterByDate from '../services/dateFilter'
@@ -13,6 +14,7 @@ import calculatePrice from '../services/calculatePrice'
 const Main = () => {
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
+  const [darkMode, setDarkMode] = useState(false)
   const [name, setName] = useState( {short: 'GPRO', long: 'GoPro, Inc.'} )
   const [price, setPrice] = useState( {close: '', change: ''} )
   const [apiString, setApiString] = useState( apiStringify(name.short, key, apiSchema[0]) )
@@ -51,11 +53,15 @@ const Main = () => {
     }
   }
 
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
+
   const filteredData = filterByDate(timeSeries.data, timeSeries.active)
 
   return (
-    <>
-      <Header/>
+    <div className={(darkMode) ? 'dark-mode' : 'light-mode'}>
+      <Header handleDarkMode={ handleDarkMode }/>
       <Sidebar/>
       <Content
         timeSeriesData={ filteredData }
@@ -64,7 +70,7 @@ const Main = () => {
         handleTimePeriod={ handleTimePeriod }
         price={ price }
         name={ name }/>
-    </>
+    </div>
   )
 }
 

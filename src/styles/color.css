@@ -1,3 +1,36 @@
+.light-mode {
+  --grey1: hsl(0, 11%, 13%);
+  --grey2: hsl(0, 6%, 26%);
+  --grey3: hsl(0, 0%, 54%);
+  --grey4: hsl(0, 0%, 69%);
+  --grey5: hsl(0, 0%, 93%);
+  --grey6: hsl(214, 100%, 95%); /* Sidebar Selection */
+  --grey7: hsl(216, 71%, 97%);
+  --grey8: hsl(214, 47%, 97%);  /* Sidebar */
+  --grey9: hsl(0, 0%, 100%);
+
+  --main1: hsl(216, 54%, 37%);
+  --main2: hsl(180, 71%, 37%);
+  --main3: hsl(43, 100%, 58%);
+  --main4: hsl(223, 26%, 32%); /* Header */
+
+  --main3-accent: hsl(43, 100%, 50%);
+
+  --grad1: hsl(173, 84%, 48%);
+  --grad2: hsl(180, 100%, 44%);
+  --grad3: hsl(194, 100%, 44%);
+  --grad4: hsl(198, 90%, 80%);
+
+  --emph1: hsl(112, 50%, 56%);
+  --emph2: hsl(0, 84%, 70%);
+
+  --shadow1: hsla(0, 0%, 0%, 0.05);
+  --shadow2: hsla(0, 0%, 0%, 0.07);
+
+  --bck-main: hsl(0, 0%, 100%);
+}
+
+
 .dark-mode {
   --grey1: hsl(0, 11%, 13%);
   --grey2: hsl(0, 6%, 26%);
