@@ -1,9 +1,9 @@
 [
   {
     "id": "1D",
-    "label": "Time Series (1min)",
+    "label": "Time Series (5min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
-    "interval": "1min",
+    "interval": "5min",
     "dateRange": 0
   },
   {

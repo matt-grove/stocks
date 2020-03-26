@@ -12,7 +12,6 @@ import apiStringify from '../services/apiStringify'
 import filterByDate from '../services/dateFilter'
 import calculatePrice from '../services/calculatePrice'
 
-import AlphaData from '../data/alpha'
 import timePeriods from '../data/apiSchema'
 import stocks from '../data/stocks'
 
@@ -20,7 +19,7 @@ import stocks from '../data/stocks'
 const Main = () => {
 
   const [data, setData] = useState(null)
-  const [price, setPrice] = useState({ close: '', change: ''})
+  const [price, setPrice] = useState({ close: '', change: '' })
 
   const [darkMode, setDarkMode] = useState(false)
 
@@ -35,12 +34,14 @@ const Main = () => {
   useEffect(() => {
     console.log('useEffect Called')
     const asyncContainer = async () => {
-      const data = await apiRequest(apiStringify(stockName.short, key, timePeriod))
-      setData(data)
-      setPrice(calculatePrice(data))
+      const apiData = await apiRequest(apiStringify(stockName.short, key, timePeriod))
+      if (timePeriod.id === timePeriods[0].id) {
+        setPrice(calculatePrice(apiData))
+      }
+      setData(filterByDate(apiData, timePeriod))
     }
     asyncContainer()
-  }, [stockName, timePeriod])
+  }, [key, stockName, timePeriod])
 
 
 
@@ -50,12 +51,8 @@ const Main = () => {
       console.log('No Changes Necessary')
       return
     }
-
-
-    console.log(currentSelection)
-    console.log(timePeriod)
-
-    // setTimePeriod(currentSelection)
+    setData(null)
+    setTimePeriod(currentSelection)
 
 
     // if (timePeriod.id === currentSelection.id) { console.log('no changes')}
@@ -74,17 +71,20 @@ const Main = () => {
   }
 
   const handleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(!darkMode)
   }
 
   const handleActiveStock = (name) => {
+    setTimePeriod(timePeriods[0])
+    setData(null)
+    setPrice( { close: '', change: '' } )
     setStockName({ short: name.short, long: name.long })
   }
 
-  const filteredData = filterByDate(data, timePeriod)
+
 
   return (
-    <div className={(darkMode) ? 'dark-mode' : 'light-mode'}>
+    <div className={(darkMode) ? 'dark-mode transition' : 'light-mode transition'}>
       <Header
         handleDarkMode={ handleDarkMode }/>
 
@@ -95,7 +95,7 @@ const Main = () => {
         setActiveStock={ handleActiveStock }/>
 
       <Content
-        timeSeriesData={ filteredData }
+        timeSeriesData={ data }
         timePeriod={ timePeriod }
         setTimePeriod={ handleTimePeriod }
         price={ price }

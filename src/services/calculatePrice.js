@@ -1,7 +1,10 @@
+import timePeriods from '../data/apiSchema'
+
 const calculatePrice = (data) => {
 
+  console.log(data)
   if (!data) return ({close: '', change: ''});
-    const initialTimeStep = "Time Series (1min)"
+    const initialTimeStep = timePeriods[0].label
     const timeseriesData = data.data[initialTimeStep]
     const currentClose = new Date(Math.max.apply(null, Object.keys(timeseriesData).map(d => new Date( d ))))
 

@@ -1,5 +1,6 @@
 const convertData = (data, options) => {
   if (data===null || data.data < 2) return null
+
   const inputData = data.data[options.label]
 
   let counter = Object.keys(inputData).length

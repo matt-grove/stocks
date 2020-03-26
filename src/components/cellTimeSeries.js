@@ -12,26 +12,29 @@ const TimeSeries = (props) => {
 
   return (
     <div className='cell cw-2 ch-1 c-double no-highlight'>
-      {
-        timeSeriesData === null ?
-        <div className='time-placeholder-wrapper'>
-          <h3 className='grey5-text time-placeholder'>loading...</h3>
-        </div> :
+
         <div className='time-container'>
           <div className='time-main-content'>
+
             <TimeText
               price={ price }
               activeStock={ activeStock }
               />
-            <TimeLine
-              timeSeriesData={ timeSeriesData }
-              timePeriod={ timePeriod }/>
+          
+            {timeSeriesData === null ?
+              <div className='time-placeholder-wrapper'>
+                <h3 className='grey5-text time-placeholder'>loading...</h3>
+              </div> :
+              <TimeLine
+                timeSeriesData={ timeSeriesData }
+                timePeriod={ timePeriod }/>
+            }
           </div>
           <TimeSelection
             timePeriod={ timePeriod }
             setTimePeriod={ setTimePeriod }/>
         </div>
-      }
+
     </div>
   )
 }

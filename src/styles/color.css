@@ -28,6 +28,7 @@
   --shadow2: hsla(0, 0%, 0%, 0.07);
 
   --bck-main: hsl(0, 0%, 100%);
+
 }
 
 
@@ -60,5 +61,14 @@
   --shadow1: hsla(0, 0%, 0%, 0.05);
   --shadow2: hsla(0, 0%, 0%, 0.07);
 
-  --bck-main: hsl(220, 13%, 18%)
+  --bck-main: hsl(220, 13%, 18%);
+
+}
+
+
+.transition * {
+  -webkit-transition: background-color 0.1s ease, color 0.1s ease;
+  -moz-transition: background-color 0.1s ease, color 0.1s ease;
+  -o-transition: background-color 0.1s ease, color 0.1s ease;
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
