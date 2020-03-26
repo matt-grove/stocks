@@ -4,47 +4,41 @@
     "label": "Time Series (1min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
     "interval": "1min",
-    "dateRange": 0,
-    "active": true
+    "dateRange": 0
   },
   {
     "id": "1W",
     "label": "Time Series (60min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
     "interval": "60min",
-    "dateRange": 7,
-    "active": false
+    "dateRange": 7
   },
   {
     "id": "1M",
     "label": "Time Series (60min)",
     "apiFunction": "TIME_SERIES_INTRADAY",
     "interval": "60min",
-    "dateRange": 30,
-    "active": false
+    "dateRange": 30
   },
   {
     "id": "6M",
     "label": "Weekly Time Series",
     "apiFunction": "TIME_SERIES_WEEKLY",
     "interval": null,
-    "dateRange": 180,
-    "active": false
+    "dateRange": 180
   },
   {
     "id": "1Y",
     "label": "Weekly Time Series",
     "apiFunction": "TIME_SERIES_WEEKLY",
     "interval": null,
-    "dateRange": 365,
-    "active": false
+    "dateRange": 365
   },
   {
     "id": "5Y",
     "label": "Weekly Time Series",
     "apiFunction": "TIME_SERIES_WEEKLY",
     "interval": null,
-    "dateRange": 1825,
-    "active": false
+    "dateRange": 1825
   }
 ]

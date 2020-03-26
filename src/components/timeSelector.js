@@ -1,17 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import allTimePeriods from '../data/apiSchema'
+
+
 
 const TimeSelection = (props) => {
 
-  const  { handleTimePeriod, timeSeriesOptions } = props
+  const  { timePeriod, setTimePeriod } = props
 
-  const buttonCollection = timeSeriesOptions.map(t => {
+  const buttonCollection = allTimePeriods.map(t => {
     return (
       <div
         key={t.id}
-        onClick={() => handleTimePeriod(t)}
-        className={
-          (t.active) ?
+        onClick={() => setTimePeriod(t)}
+        className={ (t.id === timePeriod.id) ?
           'time-selector time-selector-selected':
           'time-selector'}>
         <h5 className='grey3-text time-selector-content'>{t.id}</h5>
@@ -27,8 +29,8 @@ const TimeSelection = (props) => {
 }
 
 TimeSelection.propTypes = {
-  handleTimePeriod: PropTypes.func.isRequired,
-  timeSeriesOptions: PropTypes.array.isRequired
+  setTimePeriod: PropTypes.func.isRequired,
+  timePeriod: PropTypes.object.isRequired
 }
 
 export default TimeSelection

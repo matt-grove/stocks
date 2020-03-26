@@ -13,7 +13,7 @@ import filterByDate from '../services/dateFilter'
 import calculatePrice from '../services/calculatePrice'
 
 import AlphaData from '../data/alpha'
-import apiSchema from '../data/apiSchema'
+import timePeriods from '../data/apiSchema'
 import stocks from '../data/stocks'
 
 
@@ -24,7 +24,7 @@ const Main = () => {
 
   const [darkMode, setDarkMode] = useState(false)
 
-  const [timePeriod, setTimePeriod] = useState(apiSchema[0])
+  const [timePeriod, setTimePeriod] = useState(timePeriods[0])
   const [stockName, setStockName] = useState({ short: stocks[0].short, long: stocks[0].long })
 
   const key = process.env.REACT_APP_STOCKS_API_KEY
@@ -33,6 +33,7 @@ const Main = () => {
 
 
   useEffect(() => {
+    console.log('useEffect Called')
     const asyncContainer = async () => {
       const data = await apiRequest(apiStringify(stockName.short, key, timePeriod))
       setData(data)
@@ -44,7 +45,19 @@ const Main = () => {
 
 
 
-  const handleTimePeriod = async (currentSelection) => {
+  const handleTimePeriod = (currentSelection) => {
+    if (timePeriod.id === currentSelection.id) {
+      console.log('No Changes Necessary')
+      return
+    }
+
+
+    console.log(currentSelection)
+    console.log(timePeriod)
+
+    // setTimePeriod(currentSelection)
+
+
     // if (timePeriod.id === currentSelection.id) { console.log('no changes')}
     // else {
     //   const inputData = await apiRequest(apiStringify(stockName.short, key, currentSelection))
@@ -65,7 +78,6 @@ const Main = () => {
   }
 
   const handleActiveStock = (name) => {
-    // handleTimePeriod(timeSeries.active)
     setStockName({ short: name.short, long: name.long })
   }
 
@@ -78,17 +90,16 @@ const Main = () => {
 
       <Sidebar
         stocks={ stocks }
-        active={ stockName }
+        activeStock={ stockName }
         price={ price }
-        handleActiveStock={ handleActiveStock }/>
+        setActiveStock={ handleActiveStock }/>
 
       <Content
         timeSeriesData={ filteredData }
-        timeSeriesActive={ timePeriod }
-        timeSeriesOptions={ apiSchema }
-        handleTimePeriod={ handleTimePeriod }
+        timePeriod={ timePeriod }
+        setTimePeriod={ handleTimePeriod }
         price={ price }
-        name={ stockName }/>
+        activeStock={ stockName }/>
     </div>
   )
 }

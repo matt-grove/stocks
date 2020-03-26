@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 const Stock = (props) => {
 
-  const { stock, active, price, handleActiveStock } = props
-  const currentPrice = (stock.short === active.short ) ? price : {close: '', change: ''}
+  const { stock, activeStock, price, setActiveStock } = props
+  const currentPrice = (stock.short === activeStock.short ) ? price : {close: '', change: ''}
 
   return (
     <div
-      className={(stock.short===active.short) ? "sb-stock sb-selected": "sb-stock"}
-      onClick={() => handleActiveStock(stock)}>
+      className={(stock.short===activeStock.short) ? "sb-stock sb-selected": "sb-stock"}
+      onClick={() => setActiveStock(stock)}>
       <div className='sb-inner'>
         <div className='sb-row-1'>
           <h3 className="sb-overflow">{ stock.short }</h3>
@@ -23,5 +23,13 @@ const Stock = (props) => {
     </div>
   )
 }
+
+Stock.propTypes = {
+  stock: PropTypes.object.isRequired,
+  activeStock: PropTypes.object.isRequired,
+  price: PropTypes.object.isRequired,
+  setActiveStock: PropTypes.func.isRequired
+}
+
 
 export default Stock

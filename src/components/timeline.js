@@ -7,9 +7,9 @@ import convertData from '../services/convertData'
 
 
 const Timeline = (props) => {
-  const { timeSeriesData, timeSeriesActive } = props
+  const { timeSeriesData, timePeriod } = props
 
-  const convertedData = convertData(timeSeriesData, timeSeriesActive)
+  const convertedData = convertData(timeSeriesData, timePeriod)
 
 
   return (
@@ -23,6 +23,7 @@ const Timeline = (props) => {
 
 Timeline.propTypes = {
   timeSeriesData: PropTypes.object.isRequired,
+  timePeriod: PropTypes.object.isRequired
 }
 
 export default Timeline;
