@@ -54,20 +54,6 @@ const Main = () => {
     setData(null)
     setTimePeriod(currentSelection)
 
-
-    // if (timePeriod.id === currentSelection.id) { console.log('no changes')}
-    // else {
-    //   const inputData = await apiRequest(apiStringify(stockName.short, key, currentSelection))
-    //   let tsOptions = [...timeSeries.options]
-    //   tsOptions = tsOptions.map(d => {
-    //     (d.id=== currentSelection.id) ? d.active = true: d.active = false
-    //     return d
-    //   })
-    //   setTimeSeries({data: inputData,
-    //                  active: currentSelection,
-    //                  options: tsOptions,
-    //                  initialData: timeSeries.initialData})
-    // }
   }
 
   const handleDarkMode = () => {
