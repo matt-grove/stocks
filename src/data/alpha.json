@@ -1,6 +1,7 @@
 { "data": {
 
     "Meta Data": {
+        
         "1. Information": "Intraday (5min) open, high, low, close prices and volume",
         "2. Symbol": "GPRO",
         "3. Last Refreshed": "2020-02-19 16:00:00",
